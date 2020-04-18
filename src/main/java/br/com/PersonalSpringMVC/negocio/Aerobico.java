@@ -1,8 +1,5 @@
 package br.com.PersonalSpringMVC.negocio;
 
-/*@Entity
-@Table(name= "TAerobico")
-@PrimaryKeyJoinColumn(name = "idExercicio")*/
 public class Aerobico extends Exercicio {
 	
 

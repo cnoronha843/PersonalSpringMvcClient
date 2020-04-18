@@ -4,53 +4,54 @@ import java.util.List;
 
 
 
-/*@Entity
-@Table(name= "TAluno")*/
-public class Aluno{
-	/*
-	 * @Id
-	 * 
-	 * @GeneratedValue
-	 */
+
+public class Aluno extends Usuario{
+	
 	private Integer id;
 	private int idade;
 	private float peso;
-	private String nome;
-	private String telefone;
-	/*
-	 * @OneToOne( fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval
-	 * = true )
-	 * 
-	 * @JoinColumn(name = "idProfessor")
-	 */
+	
 	private  Professor professor;
 	
-	/*
-	 * @OneToMany( mappedBy = "emprestimo", fetch = FetchType.EAGER, cascade =
-	 * CascadeType.ALL, orphanRemoval = true )
-	 * 
-	 * @JoinColumn(name = "idExercicio")
-	 * 
-	 * @JsonManagedReference
-	 */
-	private List <Exercicio> exercicios;
-
-		
 	
-	public String getNome() {
-		return nome;
+	private List <Exercicio> exercicios;
+	
+
+	public Aluno() {
+		super();
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public Aluno(Integer id, int idade, float peso, Professor professor, List<Exercicio> exercicios) {
+		super();
+		this.id = id;
+		this.idade = idade;
+		this.peso = peso;
+		this.professor = professor;
+		this.exercicios = exercicios;
 	}
 
-	public String getTelefone() {
-		return telefone;
+	public Integer getId() {
+		return id;
 	}
 
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public int getIdade() {
+		return idade;
+	}
+
+	public void setIdade(int idade) {
+		this.idade = idade;
+	}
+
+	public float getPeso() {
+		return peso;
+	}
+
+	public void setPeso(float peso) {
+		this.peso = peso;
 	}
 
 	public Professor getProfessor() {
@@ -69,29 +70,9 @@ public class Aluno{
 		this.exercicios = exercicios;
 	}
 
-	public Aluno() {
 		
-	}
 	
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
 	
-	public int getIdade() {
-		return idade;
-	}
-	public void setIdade(int idade) {
-		this.idade = idade;
-	}
-	public float getPeso() {
-		return peso;
-	}
-	public void setPeso(float peso) {
-		this.peso = peso;
-	}
 	
 	
 
